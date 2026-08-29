@@ -1,0 +1,37 @@
+:root {
+  /* Paleta: 3-5 colores */
+  --bg: #f2f4f8;          /* fondo neutro */
+  --surface: #ffffff;     /* superficies / cards */
+  --ink: #1b1f2a;         /* texto principal */
+  --muted: #6b7280;       /* texto secundario */
+  --brand: #b91c1c;       /* rojo Pokédex (marca) */
+  --brand-dark: #7f1212;
+  --accent: #f6c945;      /* amarillo acento */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+button,
+.brand {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
