@@ -11,7 +11,8 @@ export interface Usuario {
   tipo: string;
   num: number;
         };
-  celu: string;
+  correo: string;
+  celu: number;
   fecha_nac: Date;
   ubicacion: { 
   pais: string;   
@@ -37,9 +38,10 @@ export class RegistroUsuarioComponent {
   nombre = signal('');
   apellido = signal('');
   identificacion = signal('CC');
-  num = signal('');
-  nac = signal('');
+  numero = signal('');
+  numero_identificacion = signal('');
   celu = signal('');
+  correo = signal('');
   fecha_nacimiento= signal('');
   correo = signal('');
   pais = signal('');
@@ -59,9 +61,10 @@ export class RegistroUsuarioComponent {
         nombreCompleto: `${this.nombre()}, ${this.apellido()}`, 
         documento: {
             tipo: this.identificacion(),
-            num: this.num()
+            num: this.numero_identificacion()
         },
         celular: this.celu(),
+        correo: this.correo(),
         fecha_nac: this.fecha_nacimiento(),
         ubicacion: { 
             pais: this.pais(),     
