@@ -5,7 +5,7 @@ import { Pokemon, PokeApiResponse } from './pokemon.model';
 
 @Injectable({ providedIn: 'root' })
 export class PokemonService {
-  private readonly baseUrl = 'https://pokeapi.co/api/v2/pokemon';
+  private reado  nly baseUrl = 'https://pokeapi.co/api/v2/pokemon';
 
   constructor(private http: HttpClient) {}
 
