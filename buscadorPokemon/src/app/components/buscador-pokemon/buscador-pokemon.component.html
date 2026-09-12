@@ -13,7 +13,7 @@
       />
     </div>
     <div>
-      <button type="submit" [disable]="cargado()" > {{ cargando()? 'Escaneando...' :Buscar}} </button>
+      <button type="submit" [disabled]="cargando()" > {{ cargando()? 'Escaneando...' : 'Buscar'}} </button>
     </div>
   
   </form>
@@ -23,7 +23,7 @@
   <p class="error">{{mensajeError()}}</p>
 }
 
-@if(Pokemon(); as poke){
+@if(pokemon(); as poke){
 
   <div appResaltarTarjeta colorBorde="#0000ff" class="card-pokemon">
     <h3>{{poke.name}} (#{{poke.id}})</h3>
@@ -31,15 +31,15 @@
 
     <p>
       Tipo:
-      <span class=".badge-tipo" [ngStyle]="{
-        'backgroud.color' : poke.type === 'fire' ? '#ff0000' : 
+      <span class="badge-tipo" [ngStyle]="{
+        'backgroud-color' : poke.type === 'fire' ? '#ff0000' : 
                             poke.type === 'water' ? '#0000ff' :
-                            poke.type === 'grass' ? '#008000' : '#cccccc'
+                            poke.type === 'grass' ? '#2E6F40' : '#cccccc'
       }"> 
     {{poke.type}} </span>
     </p>
 
-    <p>Exp Base: <strong>{{poke.baseExperiencia}}</strong></p>
+    <p>Exp Base: <strong>{{poke.baseExperience}}</strong></p>
     <button class="btn-guardar" (click)="guardarEnEquipo()">
       Almacenar en Invertario
     </button>

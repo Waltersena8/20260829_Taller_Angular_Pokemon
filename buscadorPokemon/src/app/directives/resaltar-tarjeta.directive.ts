@@ -20,8 +20,8 @@ export class ResaltarTarjetaDirective {
   }
   
   private aplicarEfecto(borde: string, transformacion: string){
-    this.el.nativeElement.styles.borde = borde;
-    this.el.nativeElement.styles.transform = transformacion;
-    this.el.nativeElement.styles.transition = 'all 0.3s ease-in-out 0.2s';
+    this.el.nativeElement.style.border = borde;
+    this.el.nativeElement.style.transform = transformacion;
+    this.el.nativeElement.style.transition = 'all 0.3s ease-in-out 0.2s';
   }
 }

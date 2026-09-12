@@ -1,8 +1,8 @@
 import { Component, signal, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgStyle } from"@angular/common"
-import { PokemonStorageService, PokemonTarjeta } from "../../services/pokemon-storage"
-import { ResaltarTarjetaDirective } from "../../directives/resaltar-tarjeta"
+import { PokemonStorageService, PokemonTarjeta } from "../../services/pokemon-storage.service"
+import { ResaltarTarjetaDirective } from "../../directives/resaltar-tarjeta.directive"
 
 @Component({
   selector: 'app-buscador-pokemon',
@@ -14,7 +14,7 @@ import { ResaltarTarjetaDirective } from "../../directives/resaltar-tarjeta"
 
 export class BuscadorPokemonComponent {
 
-  pokemonService = injecct(PokemonStorageService)
+  pokemonService = inject(PokemonStorageService)
 
   nombrePokemonInput = signal('');
   pokemon = signal<PokemonTarjeta | null>(null);
@@ -35,7 +35,7 @@ export class BuscadorPokemonComponent {
         this.pokemon.set({
           id: res.id,
           name: res.name.toUpperCase(),
-          image: res.sprite.front_default,
+          image: res.sprites.front_default,
           type: res.types[0].type.name,
           baseExperience: res.base_experience,
           esFavorito: false

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { NgClass} from "@angular/common";
-import { PokemonStorageService,  } from "../../services/pokemon-storage"
-import { ResaltarTarjetaDirective } from "../../directives/resaltar-tarjeta"
+import { PokemonStorageService,  } from "../../services/pokemon-storage.service"
+import { ResaltarTarjetaDirective } from "../../directives/resaltar-tarjeta.directive"
 
 
 @Component({
@@ -12,6 +12,6 @@ import { ResaltarTarjetaDirective } from "../../directives/resaltar-tarjeta"
   styleUrl: './inventario-pokemon.css'
 })
 export class InventarioPokemon {
-  pokemonService = inject(pokemonStorageService)
+  pokemonService = inject(PokemonStorageService)
 
 }

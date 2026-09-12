@@ -33,14 +33,14 @@ export class PokemonStorageService {
     const Data = localStorage.getItem(this.STORAGE_KEY);
     
     if (Data) {
-      this.misPokemons.set(JSON.parse(Dataata));
+      this.misPokemons.set(JSON.parse(Data));
     }
   }
 
   //-1. Obtener datos de la API
 
   buscarEnAPI(nombreOId: string){
-    return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${nombreOId.toLocaleLowerCase}`)
+    return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${nombreOId}`)
 
 
   };
